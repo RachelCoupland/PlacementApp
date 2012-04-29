@@ -24,11 +24,23 @@
 				<thead>
 					<tr>
 					
+						<g:sortableColumn property="companyName" title="${message(code: 'placementOpportunity.companyName.label', default: 'Company Name')}" />
+					
+						<g:sortableColumn property="jobTitle" title="${message(code: 'placementOpportunity.jobTitle.label', default: 'Job Title')}" />
+					
+						<g:sortableColumn property="status" title="${message(code: 'placementOpportunity.status.label', default: 'Status')}" />
+					
 					</tr>
 				</thead>
 				<tbody>
 				<g:each in="${placementOpportunityInstanceList}" status="i" var="placementOpportunityInstance">
 					<tr class="${(i % 2) == 0 ? 'even' : 'odd'}">
+					
+						<td><g:link action="show" id="${placementOpportunityInstance.id}">${fieldValue(bean: placementOpportunityInstance, field: "companyName")}</g:link></td>
+					
+						<td>${fieldValue(bean: placementOpportunityInstance, field: "jobTitle")}</td>
+					
+						<td>${fieldValue(bean: placementOpportunityInstance, field: "status")}</td>
 					
 					</tr>
 				</g:each>

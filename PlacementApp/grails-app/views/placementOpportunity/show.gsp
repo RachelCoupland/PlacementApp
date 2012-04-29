@@ -23,6 +23,33 @@
 			</g:if>
 			<ol class="property-list placementOpportunity">
 			
+				<g:if test="${placementOpportunityInstance?.companyName}">
+				<li class="fieldcontain">
+					<span id="companyName-label" class="property-label"><g:message code="placementOpportunity.companyName.label" default="Company Name" /></span>
+					
+						<span class="property-value" aria-labelledby="companyName-label"><g:fieldValue bean="${placementOpportunityInstance}" field="companyName"/></span>
+					
+				</li>
+				</g:if>
+			
+				<g:if test="${placementOpportunityInstance?.jobTitle}">
+				<li class="fieldcontain">
+					<span id="jobTitle-label" class="property-label"><g:message code="placementOpportunity.jobTitle.label" default="Job Title" /></span>
+					
+						<span class="property-value" aria-labelledby="jobTitle-label"><g:fieldValue bean="${placementOpportunityInstance}" field="jobTitle"/></span>
+					
+				</li>
+				</g:if>
+			
+				<g:if test="${placementOpportunityInstance?.status}">
+				<li class="fieldcontain">
+					<span id="status-label" class="property-label"><g:message code="placementOpportunity.status.label" default="Status" /></span>
+					
+						<span class="property-value" aria-labelledby="status-label"><g:fieldValue bean="${placementOpportunityInstance}" field="status"/></span>
+					
+				</li>
+				</g:if>
+			
 			</ol>
 			<g:form>
 				<fieldset class="buttons">

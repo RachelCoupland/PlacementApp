@@ -4,7 +4,6 @@ class PlacementOpportunity {
 
         String jobTitle
         String companyName
-        String applications
         String status
 
 
