@@ -36,7 +36,7 @@
 				<li class="fieldcontain">
 					<span id="placement-label" class="property-label"><g:message code="application.placement.label" default="Placement" /></span>
 					
-						<span class="property-value" aria-labelledby="placement-label"><g:link controller="placementOpportunity" action="show" id="${applicationInstance?.placement?.id}">${applicationInstance?.placement?.encodeAsHTML()}</g:link></span>
+						<span class="property-value" aria-labelledby="placement-label"><g:link controller="placementOpportunity" action="show" id="${applicationInstance?.placement?.id}">${applicationInstance?.placement?.jobTitle?.encodeAsHTML()}</g:link></span>
 					
 				</li>
 				</g:if>
@@ -45,7 +45,7 @@
 				<li class="fieldcontain">
 					<span id="status-label" class="property-label"><g:message code="application.status.label" default="Status" /></span>
 					
-						<span class="property-value" aria-labelledby="status-label"><g:link controller="status" action="show" id="${applicationInstance?.status?.id}">${applicationInstance?.status?.encodeAsHTML()}</g:link></span>
+						<span class="property-value" aria-labelledby="status-label"><g:link controller="status" action="show" id="${applicationInstance?.status?.id}">${applicationInstance?.status?.description?.encodeAsHTML()}</g:link></span>
 					
 				</li>
 				</g:if>
@@ -54,7 +54,7 @@
 				<li class="fieldcontain">
 					<span id="student-label" class="property-label"><g:message code="application.student.label" default="Student" /></span>
 					
-						<span class="property-value" aria-labelledby="student-label"><g:link controller="student" action="show" id="${applicationInstance?.student?.id}">${applicationInstance?.student?.encodeAsHTML()}</g:link></span>
+						<span class="property-value" aria-labelledby="student-label"><g:link controller="student" action="show" id="${applicationInstance?.student?.id}">${applicationInstance?.student?.name?.encodeAsHTML()}</g:link></span>
 					
 				</li>
 				</g:if>
