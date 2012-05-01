@@ -23,12 +23,22 @@
 			<table>
 				<thead>
 					<tr>
-					
+					<th><g:message code="application.student.label" default="Student" /></th>	
+					<th><g:message code="application.placement.label" default="Placement" /></th>
+					<th><g:message code="application.status.label" default="Status" /></th>
 					</tr>
 				</thead>
 				<tbody>
 				<g:each in="${applicationInstanceList}" status="i" var="applicationInstance">
 					<tr class="${(i % 2) == 0 ? 'even' : 'odd'}">
+					
+						<td>${fieldValue(bean: applicationInstance, field: "student.name")}</td>
+					
+						<td>${fieldValue(bean: applicationInstance, field: "placement.jobTitle")}</td>
+					
+						<td>${fieldValue(bean: applicationInstance, field: "status.description")}</td>
+					
+						
 					
 					</tr>
 				</g:each>

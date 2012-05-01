@@ -23,6 +23,24 @@
 			</g:if>
 			<ol class="property-list status">
 			
+				<g:if test="${statusInstance?.code}">
+				<li class="fieldcontain">
+					<span id="code-label" class="property-label"><g:message code="status.code.label" default="Code" /></span>
+					
+						<span class="property-value" aria-labelledby="code-label"><g:fieldValue bean="${statusInstance}" field="code"/></span>
+					
+				</li>
+				</g:if>
+			
+				<g:if test="${statusInstance?.description}">
+				<li class="fieldcontain">
+					<span id="description-label" class="property-label"><g:message code="status.description.label" default="Description" /></span>
+					
+						<span class="property-value" aria-labelledby="description-label"><g:fieldValue bean="${statusInstance}" field="description"/></span>
+					
+				</li>
+				</g:if>
+			
 			</ol>
 			<g:form>
 				<fieldset class="buttons">

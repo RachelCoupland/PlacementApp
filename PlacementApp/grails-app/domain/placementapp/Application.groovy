@@ -2,12 +2,13 @@ package placementapp
 
 class Application {
 
-        String student
-        String placement
-        String status
+        Student student
+        PlacementOpportunity placement
+        Status status
         String timestamp
 
 
     static constraints = {
+        timestamp(nullable:true)
     }
 }

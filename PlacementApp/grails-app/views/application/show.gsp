@@ -23,6 +23,42 @@
 			</g:if>
 			<ol class="property-list application">
 			
+				<g:if test="${applicationInstance?.timestamp}">
+				<li class="fieldcontain">
+					<span id="timestamp-label" class="property-label"><g:message code="application.timestamp.label" default="Timestamp" /></span>
+					
+						<span class="property-value" aria-labelledby="timestamp-label"><g:fieldValue bean="${applicationInstance}" field="timestamp"/></span>
+					
+				</li>
+				</g:if>
+			
+				<g:if test="${applicationInstance?.placement}">
+				<li class="fieldcontain">
+					<span id="placement-label" class="property-label"><g:message code="application.placement.label" default="Placement" /></span>
+					
+						<span class="property-value" aria-labelledby="placement-label"><g:link controller="placementOpportunity" action="show" id="${applicationInstance?.placement?.id}">${applicationInstance?.placement?.encodeAsHTML()}</g:link></span>
+					
+				</li>
+				</g:if>
+			
+				<g:if test="${applicationInstance?.status}">
+				<li class="fieldcontain">
+					<span id="status-label" class="property-label"><g:message code="application.status.label" default="Status" /></span>
+					
+						<span class="property-value" aria-labelledby="status-label"><g:link controller="status" action="show" id="${applicationInstance?.status?.id}">${applicationInstance?.status?.encodeAsHTML()}</g:link></span>
+					
+				</li>
+				</g:if>
+			
+				<g:if test="${applicationInstance?.student}">
+				<li class="fieldcontain">
+					<span id="student-label" class="property-label"><g:message code="application.student.label" default="Student" /></span>
+					
+						<span class="property-value" aria-labelledby="student-label"><g:link controller="student" action="show" id="${applicationInstance?.student?.id}">${applicationInstance?.student?.encodeAsHTML()}</g:link></span>
+					
+				</li>
+				</g:if>
+			
 			</ol>
 			<g:form>
 				<fieldset class="buttons">
