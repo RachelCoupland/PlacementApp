@@ -1,14 +1,28 @@
 package placementapp
 
 import org.springframework.dao.DataIntegrityViolationException
+import grails.converters.*;
 
 class PlacementOpportunityController {
 
     static allowedMethods = [save: "POST", update: "POST", delete: "POST"]
 
+    def listOpenPlacements(){
+        def response = []
+
+        def placements = PlacementOpportunity.findAllByStatus("open")
+        placements.each { 
+        response.add([id:it.id,jobName:it.jobTitle])
+
+}
+        withFormat {
+          html response
+          json { render response as JSON }
+        } 
+    }
     def index() {
         redirect(action: "list", params: params)
-    }
+    } 
 
     def list() {
         params.max = Math.min(params.max ? params.int('max') : 10, 100)
