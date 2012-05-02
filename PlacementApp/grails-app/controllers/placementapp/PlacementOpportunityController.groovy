@@ -20,6 +20,23 @@ class PlacementOpportunityController {
           json { render response as JSON }
         } 
     }
+
+
+def listApplicants(){
+        def response = []
+
+        def placements = PlacementOpportunity.get(params.id)
+        placements.applicants.each { 
+        response.add([id:it.id,jobName:it.placement.jobTitle])
+
+}
+        withFormat {
+          html response
+          json { render response as JSON }
+        } 
+    }
+
+
     def index() {
         redirect(action: "list", params: params)
     } 
