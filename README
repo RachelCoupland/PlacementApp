@@ -1,4 +1,47 @@
-This is my placements application 
+This is my placements application README 
 
+Navigate to my project: my username is RachelCoupland and the project for this assignment is called PlacementApp: https://github.com/RachelCoupland/PlacementApp
 
-Instructions of how to check out and build your project go here.
+To clone my project from GitHub, you will need to first Fork the project. To do this, click the Fork button. You need to be signed into your GitHub account to be able to do this.
+
+Once you have clicked Fork on the PlacementApp project, you need to clone the project to your local machine. To do this, run the following code:
+	$ git clone git@github.com:RachelCoupland/PlacementApp.git
+
+Following this, in order to keep track of my original repository you need to add another remote called upstream. To do this, run the following code:
+	$ cd PlacementApp
+	$ git remote add upstream git://github.com/RachelCoupland/PlacementApp.git
+	$ git fetch upstream
+
+To compile the application you need to navigate to the Terminal within the VMWare Image, and run the following code:
+	$ cd dev/
+	$ cd PlacementApp/
+	$ cd PlacementApp/
+
+To run the app:	
+	$ cd ..
+	$ grials run-app
+
+This command creates the application for an application called PlacementApp:
+        grails create-app PlacementApp 
+This command creates the domain classes:
+        grails create-domain-class <class name>
+The following code lines create the classes for this application:
+        grails create-domain-class Student
+        grails create-domain-class Application
+        grails create-domain-class PlacementOpportunity
+        grails create-domain-class Status 
+
+The following command is used to generate a controller, views and a controller unit test for the domain class: 
+        grails generate-all placementapp.Student 
+        grails generate-all placementapp.PlacementOpportunity and 
+        grails generate-all placementapp.Status 
+This code was run to create scaffolding controllers for each of the domains.
+
+This command was used when creating the Apply scaffolding:
+        grails generate controller  
+
+This command runs the application:
+        grails run-app
+This runs the app on a local server. When it is ready, terminal will give the address of the local host: http://localhost:8080/PlacmentApp
+Navigate to this through the browser.
+
